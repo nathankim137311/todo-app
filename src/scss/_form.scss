@@ -1,0 +1,76 @@
+@import "variables"; 
+
+#form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: fixed;
+    right: 0px;
+    right: -370px;
+    height: 95%;
+    width: 370px;
+    padding: 0px 30px 30px 30px;
+    background-color: $darkgrey;
+    transition: .25s; 
+}
+
+// sliding bar animation
+#form-container.active {
+    right: 0px;
+} 
+
+#form {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    color: white;
+    h2 {
+        margin: 0px;
+    }
+    input, select {
+        background-color: $lightgrey;
+        color: white;
+        height: 30px;
+        padding: 0px 10px 0px 10px;
+        margin-bottom: 40px;
+        border: none;
+        border-radius: 3px;
+    }
+    textarea {
+        background-color: $lightgrey;
+        color: white;
+        height: 150px;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: none;
+        border-radius: 3px;
+    }
+    label {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+    }
+    label:first-of-type {
+        margin-top: 20px;
+    }
+}
+
+// add button
+#button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    button {
+        border-radius: 3px;
+        border: none;
+        background-color: $blurple;
+        color: white;
+        height: 30px;
+        width: 100%;
+        font-size: 1rem;
+        margin-top: 20px;
+    }
+    button:hover {
+        cursor: pointer;
+    }
+}

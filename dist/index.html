@@ -27,7 +27,28 @@
             <li><a title="add project"href="#">Add Project</a></li>
         </ul>
     </div>
-    
+    <div id="form-container">
+        <form id="form">
+            <h2>Add Task</h2>
+            <label for="title">Title:</label>
+            <input type="text" placeholder="Title: Homework" name="title" id="title-input">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description-input" cols="30" rows="6" placeholder="do homework before 9pm..."></textarea>
+            <label for="project">Project:</label>
+            <input type="text" placeholder="enter project name" name="project" id="project-input">
+            <label for="date-input">Due date:</label>
+            <input type="date" name="date" id="date-input">
+            <label for="priority-level">Priority:</label>
+            <select name="priority-level" id="priority-input">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <div id="button-container">
+                <button id="add-btn">Add</button>
+            </div>
+        </form>
+    </div>
     <script src="main.js"></script>
 </body>
 </html>

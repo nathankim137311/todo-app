@@ -35,6 +35,7 @@ nav {
   color: white;
   padding: 10px 30px 10px 30px;
   width: 100%;
+  height: 50px;
   z-index: 2;
 }
 
@@ -85,7 +86,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  background-color: #2F3136;
+  background-color: #202225;
 }
 
 nav ul li #add-task {
@@ -131,5 +132,106 @@ nav ul li #add-task {
 
 #side-nav ul li a:hover {
   background-color: #2F3136;
+}
+
+#form-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: fixed;
+  right: 0px;
+  right: -370px;
+  height: 95%;
+  width: 370px;
+  padding: 0px 30px 30px 30px;
+  background-color: #202225;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+
+#form-container.active {
+  right: 0px;
+}
+
+#form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  color: white;
+}
+
+#form h2 {
+  margin: 0px;
+}
+
+#form input, #form select {
+  background-color: #36393F;
+  color: white;
+  height: 30px;
+  padding: 0px 10px 0px 10px;
+  margin-bottom: 40px;
+  border: none;
+  border-radius: 3px;
+}
+
+#form textarea {
+  background-color: #36393F;
+  color: white;
+  height: 150px;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: none;
+  border-radius: 3px;
+}
+
+#form label {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+#form label:first-of-type {
+  margin-top: 20px;
+}
+
+#button-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+#button-container button {
+  border-radius: 3px;
+  border: none;
+  background-color: #5865F2;
+  color: white;
+  height: 30px;
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 20px;
+}
+
+#button-container button:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=style.css.map */
