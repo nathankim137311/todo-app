@@ -3,9 +3,9 @@
 #form-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: start;
     position: fixed;
-    right: 0px;
+    //right: 0px;
     right: -370px;
     height: 95%;
     width: 370px;
@@ -24,6 +24,7 @@
     flex-direction: column;
     height: fit-content;
     color: white;
+    margin-top: 32px;
     h2 {
         margin: 0px;
     }
@@ -35,6 +36,7 @@
         margin-bottom: 40px;
         border: none;
         border-radius: 3px;
+        font-size: 1rem;
     }
     textarea {
         background-color: $lightgrey;
@@ -44,6 +46,7 @@
         margin-bottom: 20px;
         border: none;
         border-radius: 3px;
+        font-size: 1rem;
     }
     label {
         margin-bottom: 10px;

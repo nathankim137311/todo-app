@@ -11,6 +11,7 @@ nav {
     width: 100%;
     height: 50px;
     z-index: 2;
+    border-bottom: 2px rgba(29, 29, 29, 0.603) solid;
     h1 {
         margin: 0px;
     }
@@ -57,7 +58,7 @@ nav {
     position: fixed;
     left: 0px;
     z-index: 1;
-    padding: 30px 10px 30px 10px;
+    padding: 40px 10px 30px 10px;
     ul {
         list-style: none;
         padding: 0px;

@@ -21,6 +21,7 @@
     </nav>
     <div id="side-nav">
         <ul id="side-nav-lnks">
+            <li><a title="home"href="#">Home</a></li>
             <li><a title="all tasks"href="#">Inbox</a></li>
             <li><a title="view all projects from dropdown menu"href="#">Projects</a></li>
             <li><a title="view all tasks due today"href="#">Today</a></li>
@@ -29,7 +30,7 @@
     </div>
     <div id="form-container">
         <form id="form">
-            <h2>Add Task</h2>
+            <h3>Add Task</h3>
             <label for="title">Title:</label>
             <input type="text" placeholder="Title: Homework" name="title" id="title-input">
             <label for="description">Description:</label>
@@ -49,6 +50,16 @@
             </div>
         </form>
     </div>
+    <div id="task-container">
+        <h2 id="project-name">Tasks</h2>
+        <ul id="task-list">
+            <li><div>
+                <input class="checkbox" type="checkbox">
+                <span>Task</span>
+                <div></div>
+            </div></li>
+        </ul>
+    <div>
     <script src="main.js"></script>
 </body>
 </html>
