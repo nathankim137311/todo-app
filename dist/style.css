@@ -90,7 +90,7 @@ nav ul li a:hover {
   background-color: #202225;
 }
 
-nav ul li #add-task {
+nav ul li #add-task-link {
   background-color: #5865F2;
   border-radius: 3px;
 }
@@ -259,7 +259,15 @@ nav ul li #add-task {
   border-radius: 2px;
 }
 
-#task-container ul li div {
+#task-container h2 {
+  margin: 0px;
+  width: 100%;
+  text-align: left;
+  color: white;
+  padding: 0px 10px 0px 10px;
+}
+
+.todo-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -275,33 +283,58 @@ nav ul li #add-task {
           align-items: center;
   height: 100%;
   width: 100%;
+  position: relative;
 }
 
-#task-container ul li div span {
-  display: inline;
-  font-size: 1.2rem;
-  color: white;
+.todo-item .container-1 {
+  display: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30px;
 }
 
-#task-container ul li div div {
-  border-radius: 50%;
-  border: 2px white solid;
-  height: 20px;
-  width: 20px;
-  background-color: red;
-}
-
-#task-container h2 {
-  margin: 0px;
-  width: 100%;
-  text-align: left;
-  color: white;
-}
-
-.checkbox {
+.todo-item .container-1 .checkbox {
   height: 20px;
   width: 20px;
   -webkit-filter: hue-rotate(225deg);
           filter: hue-rotate(225deg);
+}
+
+.todo-item .container-1 span {
+  display: inline;
+  font-size: 1.2rem;
+  color: white;
+  position: absolute;
+  right: 50%;
+}
+
+.todo-item .container-2 {
+  display: inherit;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 30px;
+}
+
+.todo-item .container-2 div {
+  border-radius: 50%;
+  border: 2px #202225 solid;
+  height: 20px;
+  width: 20px;
+  background-color: white;
+  margin-right: 20px;
+}
+
+.todo-item .container-2 span {
+  display: inline;
+  font-size: 1.2rem;
+  color: white;
 }
 /*# sourceMappingURL=style.css.map */

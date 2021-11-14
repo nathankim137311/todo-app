@@ -14,7 +14,7 @@
         <h1>// My Todo List</h1>
     </header>
         <ul id="nav-links">
-            <li><a title="add task" id="add-task" href="#">Add Task</a></li>
+            <li><a title="add task" id="add-task-link" href="#">Add Task</a></li>
             <li><a title="go to this project's github repo"id="github" href="#">Github</a></li>
             <li><a title="settings"id="settings" href="#">Settings</a></li>
         </ul>
@@ -46,17 +46,22 @@
                 <option value="low">Low</option>
             </select>
             <div id="button-container">
-                <button id="add-btn">Add</button>
+                <button id="add-task-btn">Add</button>
             </div>
         </form>
     </div>
     <div id="task-container">
         <h2 id="project-name">Tasks</h2>
         <ul id="task-list">
-            <li><div>
-                <input class="checkbox" type="checkbox">
-                <span>Task</span>
-                <div></div>
+            <li><div class="todo-item">
+                <div class="container-1">
+                    <input class="checkbox" type="checkbox">
+                    <span>Task</span>
+                </div>
+                <div class="container-2">
+                    <div></div>
+                    <span>Trash</span>
+                </div>
             </div></li>
         </ul>
     <div>
