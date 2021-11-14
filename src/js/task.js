@@ -21,7 +21,7 @@ export function createTask() {
     const project = document.getElementById('project-input').value;
     const priority = document.getElementById('priority-input').value;
     const date = document.getElementById('date-input').value;
-    const task = new Task('Homework', 'complete homework before 9pm', 'School', 'high', '11/13/21'); // dummy values
+    const task = new Task('Homework', 'complete homework before 9pm', 'School', 'medium', '11/13/21'); // dummy values
     createTaskDom(task);
 }
 
@@ -48,11 +48,13 @@ export function createTaskDom(obj) {
     container2.classList.add('container-2');
     const priorityDiv = document.createElement('div');
     const span2 = document.createElement('span');
-    span2.textContent = 'Trash';
+    span2.innerHTML = '<span class="material-icons-outlined"><a title="delete task" href="#">delete</a></span>';
     container2.append(
         priorityDiv,
         span2
     ); 
+    // priority level
+    colorPriority(obj.priority, priorityDiv);
     taskList.appendChild(taskLi);
     taskLi.appendChild(taskDiv);
     taskDiv.append(
@@ -61,17 +63,16 @@ export function createTaskDom(obj) {
     );
 }
 
-/*
-// task list // 
-id = task-list
-<li><div class="todo-item">
-    <div class="container-1">
-        <input class="checkbox" type="checkbox">
-        <span>Task</span>
-    </div>
-    <div class="container-2">
-        <div></div>
-        <span>Trash</span>
-    </div>
-</div></li>
-*/
+function colorPriority(priority, div) {
+    switch(priority.toLowerCase()) {
+        case 'high':
+            div.style.backgroundColor = 'red';
+            break;
+        case 'medium':
+            div.style.backgroundColor = '#FECD19';
+            break;
+        case 'low':
+            div.style.backgroundColor = '#6FB202';
+            break;
+    }
+}

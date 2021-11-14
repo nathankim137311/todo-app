@@ -50,7 +50,7 @@
             font-size: 1.2rem;
             color: white;
             position: absolute;
-            right: 50%;
+            left: 40%;
         }
     }
     .container-2 {
@@ -66,10 +66,11 @@
             background-color: white;
             margin-right: 40px;
         }
-        span {
+        span a {
             display: inline;
-            font-size: 1.2rem;
-            color: white;
+            font-size: 1.5rem;
+            color: #AB1D3D;
+            text-decoration: none;
         }
     }
 }

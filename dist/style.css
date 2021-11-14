@@ -310,7 +310,7 @@ nav ul li #add-task-link {
   font-size: 1.2rem;
   color: white;
   position: absolute;
-  right: 50%;
+  left: 40%;
 }
 
 .todo-item .container-2 {
@@ -333,9 +333,10 @@ nav ul li #add-task-link {
   margin-right: 40px;
 }
 
-.todo-item .container-2 span {
+.todo-item .container-2 span a {
   display: inline;
-  font-size: 1.2rem;
-  color: white;
+  font-size: 1.5rem;
+  color: #AB1D3D;
+  text-decoration: none;
 }
 /*# sourceMappingURL=style.css.map */
