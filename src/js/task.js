@@ -1,7 +1,7 @@
 
-  ///////////  
- // tasks //
-///////////
+  //////////
+ // Task //
+//////////
 
 export default class Task {
     constructor(title, description, project, priority, date) {
@@ -12,6 +12,11 @@ export default class Task {
         this.priority = priority;
         this.date = date; 
         this.status = 'incomplete'; 
+        Task.saveId(this.id);
+    }
+    static saveId(id) {
+        const newId = id;
+        localStorage.setItem('id', JSON.stringify(newId));  
     }
 }
 
@@ -21,12 +26,12 @@ export function createTask() {
     const project = document.getElementById('project-input').value;
     const priority = document.getElementById('priority-input').value;
     const date = document.getElementById('date-input').value;
-    const task = new Task('Homework', 'complete homework before 9pm', 'School', 'medium', '11/13/21'); // dummy values
+    const task = new Task('Homework', 'complete homework before 9pm', 'School', 'high', '11/13/21'); // dummy values
     createTaskDom(task);
+    return task;
 }
 
 export function createTaskDom(obj) {
-    console.log(obj);
     const taskList = document.getElementById('task-list');
     const taskLi = document.createElement('li');
     const taskDiv = document.createElement('div');
@@ -66,7 +71,7 @@ export function createTaskDom(obj) {
 function colorPriority(priority, div) {
     switch(priority.toLowerCase()) {
         case 'high':
-            div.style.backgroundColor = 'red';
+            div.style.backgroundColor = '#AB1D3D';
             break;
         case 'medium':
             div.style.backgroundColor = '#FECD19';

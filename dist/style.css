@@ -253,11 +253,11 @@ nav ul li #add-task-link {
 }
 
 #task-container ul li {
-  background-color: #2F3136;
+  background-color: transparent;
   height: 50px;
   padding: 10px 20px 10px 20px;
   border-radius: 2px;
-  border-bottom: 2px #202225 solid;
+  border-bottom: 1px #202225 solid;
 }
 
 #task-container h2 {
