@@ -3,8 +3,11 @@
  // Storage //
 /////////////
 
-export const taskArr = [];
-export const projectArr = [];
+import { createTaskDom } from "./task.js";
+import Project from "./project.js";
+
+export let taskArr = [];
+export let projectArr = [];
 
 export default class Storage {
     static saveTask(task) {
@@ -16,6 +19,37 @@ export default class Storage {
         const uniqueProjects = [...new Set(projectArr)]; 
         localStorage.setItem('projects', JSON.stringify(uniqueProjects));
         return uniqueProjects;
+    }
+}
+
+export class Load extends Storage {
+    static itemsFromStorage() {
+        this.tasks();
+        this.projects();
+    }
+    static tasks() {
+        if(localStorage.getItem('tasks') === null) {
+            taskArr = []; 
+        } else {
+            taskArr = JSON.parse(localStorage.getItem('tasks'));
+            this.loadTasks(taskArr); 
+        }
+    }
+    static projects() {
+        if(localStorage.getItem('projects') === null) {
+            projectArr = []; 
+        } else {
+            projectArr = JSON.parse(localStorage.getItem('projects'));
+            this.loadProjects(projectArr);
+        }
+    }
+    static loadTasks(taskArr) {
+        for(let i = 0; i < taskArr.length; i++) {
+            createTaskDom(taskArr[i]);
+        }
+    }
+    static loadProjects(projectArr) {
+        Project.createProject(projectArr);
     }
 }
 
