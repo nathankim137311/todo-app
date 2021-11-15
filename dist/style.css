@@ -135,6 +135,23 @@ nav ul li #add-task-link {
   background-color: #2F3136;
 }
 
+#side-nav-links #project-list {
+  display: none;
+  margin-left: 20px;
+}
+
+#side-nav-links #project-list li {
+  color: black;
+}
+
+#side-nav-links #project-list li a {
+  font-size: 1.1rem;
+}
+
+#side-nav-links #project-list.active {
+  display: block;
+}
+
 #form-container {
   display: -webkit-box;
   display: -ms-flexbox;
