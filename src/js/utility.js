@@ -16,5 +16,10 @@ export default class Utility {
             document.getElementById('form-container').classList.remove('active');
         }
     }
+    static removeAllChildNodes(parent) {
+        while(parent.firstChild) {
+            parent.removeChild(parent.firstChild);
+        }
+    }
 }
     

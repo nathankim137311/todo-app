@@ -26,6 +26,7 @@ export function createTask() {
     const project = document.getElementById('project-input').value;
     const priority = document.getElementById('priority-input').value;
     const date = document.getElementById('date-input').value;
+    // const task = new Task(title, description, project, priority, date);
     const task = new Task('Homework', 'complete homework before 9pm', 'School', 'high', '11/13/21'); // dummy values
     createTaskDom(task);
     return task;

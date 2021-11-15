@@ -15,6 +15,7 @@ export default class Storage {
         projectArr.push(project);
         const uniqueProjects = [...new Set(projectArr)]; 
         localStorage.setItem('projects', JSON.stringify(uniqueProjects));
+        return uniqueProjects;
     }
 }
 

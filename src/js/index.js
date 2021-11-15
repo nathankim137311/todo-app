@@ -2,9 +2,14 @@ import Utility from "./utility.js";
 import { createTask } from "./task.js";
 import Storage from "./storage.js";
 import Project from "./project.js";
+const form = document.getElementById('form');
 const addTaskLink = document.getElementById('add-task-link');
 const addTaskBtn = document.getElementById('add-task-btn');
 const projectLink = document.getElementById('project-link');
+
+form.addEventListener('click', (e) => {
+    e.preventDefault();
+});
 
 addTaskLink.addEventListener('click', (e) => {
     Utility.showForm(e);
@@ -12,9 +17,9 @@ addTaskLink.addEventListener('click', (e) => {
 
 addTaskBtn.addEventListener('click', () => {
     const task = createTask();
-    Project.createProject(task.project); 
     Storage.saveTask(task);
-    Storage.saveProject(task.project);
+    const projectArr = Storage.saveProject(task.project);
+    Project.createProject(projectArr); 
 });
 
 projectLink.addEventListener('click', () => {
