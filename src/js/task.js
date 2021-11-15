@@ -37,6 +37,13 @@ export function createTaskDom(obj) {
     const taskLi = document.createElement('li');
     const taskDiv = document.createElement('div');
     taskDiv.classList.add('todo-item');
+    taskDiv.setAttribute('id', `${obj.id}`);
+    /*
+    taskDiv.addEventListener('click', (e) => {
+        //console.log(e.target.id);
+        // check id and compare to 
+    });
+    */
     // container 1 
     const container1 = document.createElement('div');
     container1.classList.add('container-1');
