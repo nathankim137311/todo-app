@@ -5,10 +5,10 @@
 
 import { createTaskDom } from "./task.js";
 import Project from "./project.js";
+import Status from "./status.js";
 
 export let taskArr = [];
 export let projectArr = [];
-export let statusArr = [];
 
 export default class Storage {
     static saveTask(task) {
@@ -21,16 +21,13 @@ export default class Storage {
         localStorage.setItem('projects', JSON.stringify(uniqueProjects));
         return uniqueProjects;
     }
-    static saveStatus(status) {
-        statusArr.push(status);
-        localStorage.setItem('statuses', JSON.stringify(statusArr));
-    }
 }
 
 export class Load extends Storage {
     static itemsFromStorage() {
         this.tasks();
         this.projects();
+        this.loadCheckBoxes();
     }
     static tasks() {
         if(localStorage.getItem('tasks') === null) {
@@ -55,6 +52,18 @@ export class Load extends Storage {
     }
     static loadProjects(projectArr) {
         Project.createProject(projectArr);
+    }
+    static loadCheckBoxes() { // might not be the best place to put this here
+        const allCheckBox = document.querySelectorAll('.checkbox');
+        allCheckBox.forEach((checkbox) => {
+            checkbox.addEventListener('change', (e) => {
+                if(e.target.checked) {
+                    Status.toggleStatus(e.target.parentNode.parentNode.id, 'complete');
+                } else {
+                    Status.toggleStatus(e.target.parentNode.parentNode.id, 'incomplete');
+                }
+            });
+        });
     }
 }
 

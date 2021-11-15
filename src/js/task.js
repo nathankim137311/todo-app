@@ -50,6 +50,9 @@ export function createTaskDom(obj) {
     const checkbox = document.createElement('input');
     checkbox.classList.add('checkbox');
     checkbox.setAttribute('type', 'checkbox');
+    if(obj.status === 'complete') {
+        checkbox.checked = true;
+    }
     const span1 = document.createElement('span');
     span1.textContent = obj.title;
     container1.append(
