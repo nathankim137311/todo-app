@@ -26,6 +26,8 @@ addTaskBtn.addEventListener('click', () => {
     Storage.saveTask(task);
     const projectArr = Storage.saveProject(task.project);
     Project.createProject(projectArr); 
+    const status = task.status;
+    Storage.saveState(status);
 });
 
 projectLink.addEventListener('click', () => {

@@ -72,7 +72,7 @@ export function createTaskDom(obj) {
 function colorPriority(priority, div) {
     switch(priority.toLowerCase()) {
         case 'high':
-            div.style.backgroundColor = '#AB1D3D';
+            div.style.backgroundColor = '#FF0000'; // #AB1D3D
             break;
         case 'medium':
             div.style.backgroundColor = '#FECD19';

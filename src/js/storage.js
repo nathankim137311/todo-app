@@ -8,6 +8,7 @@ import Project from "./project.js";
 
 export let taskArr = [];
 export let projectArr = [];
+export let stateArr = [];
 
 export default class Storage {
     static saveTask(task) {
@@ -19,6 +20,10 @@ export default class Storage {
         const uniqueProjects = [...new Set(projectArr)]; 
         localStorage.setItem('projects', JSON.stringify(uniqueProjects));
         return uniqueProjects;
+    }
+    static saveState(status) {
+        stateArr.push(status);
+        localStorage.setItem('stateArr', JSON.stringify(stateArr));
     }
 }
 
