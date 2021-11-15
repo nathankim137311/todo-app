@@ -38,12 +38,6 @@ export function createTaskDom(obj) {
     const taskDiv = document.createElement('div');
     taskDiv.classList.add('todo-item');
     taskDiv.setAttribute('id', `${obj.id}`);
-    /*
-    taskDiv.addEventListener('click', (e) => {
-        //console.log(e.target.id);
-        // check id and compare to 
-    });
-    */
     // container 1 
     const container1 = document.createElement('div');
     container1.classList.add('container-1');
@@ -63,11 +57,16 @@ export function createTaskDom(obj) {
     const container2 = document.createElement('div');
     container2.classList.add('container-2');
     const priorityDiv = document.createElement('div');
-    const span2 = document.createElement('span');
-    span2.innerHTML = '<span class="material-icons-outlined"><a title="delete task" href="#">delete</a></span>';
+    const deleteIcon = document.createElement('span');
+    deleteIcon.innerHTML = '<span class="material-icons-outlined"><a id="delete-icon" title="delete task" href="#">delete</a></span>';
+    deleteIcon.addEventListener('click', (e) => {
+        const id = e.target.parentNode.parentNode.parentNode.parentNode.id;
+        e.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
+        deleteTodo(id);
+    });
     container2.append(
         priorityDiv,
-        span2
+        deleteIcon
     ); 
     // priority level
     colorPriority(obj.priority, priorityDiv);
@@ -77,6 +76,13 @@ export function createTaskDom(obj) {
         container1,
         container2
     );
+}
+
+function deleteTodo(id) {
+    const taskArr = JSON.parse(localStorage.getItem('tasks'));
+    const index = taskArr.findIndex(task => task.id == id);
+    taskArr.splice(index, 1);
+    localStorage.setItem('tasks', JSON.stringify(taskArr));
 }
 
 function colorPriority(priority, div) {
