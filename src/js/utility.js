@@ -21,5 +21,10 @@ export default class Utility {
             parent.removeChild(parent.firstChild);
         }
     }
+    static filter(name) {
+        const taskArr = JSON.parse(localStorage.getItem('tasks'));
+        const newArr = taskArr.filter(task => task.project === name);
+        return newArr;
+    }
 }
     

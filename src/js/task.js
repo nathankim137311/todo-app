@@ -18,6 +18,14 @@ export default class Task {
         const newId = id;
         localStorage.setItem('id', JSON.stringify(newId));  
     }
+    static clearTaskList() {
+        document.getElementById('task-list').innerHTML = ''; 
+    }
+    static createNewTaskList(list) {
+        for(let i = 0; list.length; i++) {
+            createTaskDom(list[i]);
+        }
+    }
 }
 
 export function createTask() {
@@ -27,7 +35,8 @@ export function createTask() {
     const priority = document.getElementById('priority-input').value;
     const date = document.getElementById('date-input').value;
     // const task = new Task(title, description, project, priority, date);
-    const task = new Task('Homework', 'complete homework before 9pm', 'School', 'high', '11/13/21'); // dummy values
+    // const task = new Task('Homework', 'complete homework before 9pm', 'School', 'high', '11/13/21'); // dummy values
+    const task = new Task('Workout', 'workout before poop', 'Gym', 'high', '11/21/2012'); // dummy values 
     createTaskDom(task);
     return task;
 }
