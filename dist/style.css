@@ -262,6 +262,7 @@ nav ul li #add-task-link {
   left: 280px;
   top: 100px;
   padding: 30px;
+  overflow-y: scroll;
 }
 
 #task-container ul {
@@ -375,8 +376,48 @@ nav ul li #add-task-link {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  background-color: #202225;
+  background-color: #2E3035;
   color: white;
-  padding: 10px;
+  padding: 20px 20px 20px 20px;
+  height: 170px;
+}
+
+.task-info-div > textarea {
+  margin-top: 10px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 0px;
+  font-size: 1rem;
+}
+
+.info-container-1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin-bottom: 20px;
+}
+
+.info-container-1 > span, input, select {
+  margin-right: 50px;
+  background-color: transparent;
+  color: white;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.info-container-1 > label {
+  margin-right: 20px;
 }
 /*# sourceMappingURL=style.css.map */

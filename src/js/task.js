@@ -58,6 +58,9 @@ export function createTaskDom(obj) {
     // task details // 
     const infoDiv = document.createElement('div');
     infoDiv.classList.add('task-info-div');
+    // two containers
+    const infoContainer1 = document.createElement('div');
+    infoContainer1.classList.add('info-container-1')
     // project title 
     const infoSpan = document.createElement('span');
     infoSpan.textContent = `Project: ${obj.project}`;
@@ -71,50 +74,40 @@ export function createTaskDom(obj) {
     titleInput.setAttribute('readonly', 'readonly'); 
     titleInput.textContent = `${obj.title}`;
     titleInput.setAttribute('value', `${obj.title}`);
-     // due date 
-     const dateLabel = document.createElement('label');
-     dateLabel.htmlFor = 'date-' + obj.id;
-     dateLabel.textContent = 'Due date:';
-     const dateInput = document.createElement('input');
-     dateInput.setAttribute('id', 'date-' + obj.id);
-     dateInput.classList.add('detail-inputs-' + obj.id);
-     dateInput.setAttribute('type', 'date'); 
-     dateInput.setAttribute('value', obj.date);
-     dateInput.setAttribute('readonly', 'readonly');
-     // priority 
-     const selectLabel = document.createElement('label');
-     selectLabel.htmlFor = 'priority-' + obj.id;
-     selectLabel.textContent = 'Priority level:';
-     const prioritySelect = document.createElement('select');
-     prioritySelect.setAttribute('id', 'priority-' + obj.id);
-     prioritySelect.classList.add('detail-inputs-' + obj.id);
-     prioritySelect.setAttribute('value', obj.priority);
-     prioritySelect.setAttribute('disabled', 'disabled');
-     // options
-     const priorityLow = document.createElement('option');
-     priorityLow.setAttribute('value', 'low');
-     priorityLow.textContent = 'Low'; 
-     const priorityMedium = document.createElement('option');
-     priorityMedium.setAttribute('value', 'medium'); 
-     priorityMedium.textContent = 'Medium'; 
-     const priorityHigh = document.createElement('option');
-     priorityHigh.setAttribute('value', 'high');
-     priorityHigh.textContent = 'High'; 
-     prioritySelect.append(priorityLow, priorityMedium, priorityHigh);
-     // default value for select element
-     Utility.defaultValue(prioritySelect, obj.priority);
-     // description input
-     const descLabel = document.createElement('label');
-     descLabel.htmlFor = 'description-' + obj.id;
-     descLabel.textContent = 'Description:';
-     const descInput = document.createElement('textarea');
-     descInput.setAttribute('id', 'description-' + obj.id);
-     descInput.classList.add('detail-inputs-' + obj.id); 
-     descInput.setAttribute('type', 'text');
-     descInput.setAttribute('readonly', 'readonly'); 
-     descInput.textContent = `${obj.description}`; 
-     descInput.setAttribute('value', `${obj.description}`);
-    infoDiv.append(
+    // due date 
+    const dateLabel = document.createElement('label');
+    dateLabel.htmlFor = 'date-' + obj.id;
+    dateLabel.textContent = 'Due date:';
+    const dateInput = document.createElement('input');
+    dateInput.setAttribute('id', 'date-' + obj.id);
+    dateInput.classList.add('detail-inputs-' + obj.id);
+    dateInput.setAttribute('type', 'date'); 
+    dateInput.setAttribute('value', obj.date);
+    dateInput.setAttribute('readonly', 'readonly');
+    // priority 
+    const selectLabel = document.createElement('label');
+    selectLabel.htmlFor = 'priority-' + obj.id;
+    selectLabel.textContent = 'Priority level:';
+    const prioritySelect = document.createElement('select');
+    prioritySelect.setAttribute('id', 'priority-' + obj.id);
+    prioritySelect.classList.add('detail-inputs-' + obj.id);
+    prioritySelect.setAttribute('value', obj.priority);
+    prioritySelect.setAttribute('disabled', 'disabled');
+    // options
+    const priorityLow = document.createElement('option');
+    priorityLow.setAttribute('value', 'low');
+    priorityLow.textContent = 'Low'; 
+    const priorityMedium = document.createElement('option');
+    priorityMedium.setAttribute('value', 'medium'); 
+    priorityMedium.textContent = 'Medium'; 
+    const priorityHigh = document.createElement('option');
+    priorityHigh.setAttribute('value', 'high');
+    priorityHigh.textContent = 'High'; 
+    prioritySelect.append(priorityLow, priorityMedium, priorityHigh);
+    // default value for select element
+    Utility.defaultValue(prioritySelect, obj.priority);
+    // append 
+    infoContainer1.append(
         infoSpan,
         titleLabel,
         titleInput,
@@ -122,15 +115,22 @@ export function createTaskDom(obj) {
         dateInput,
         selectLabel,
         prioritySelect,
+    );
+    // description input
+    const descLabel = document.createElement('label');
+    descLabel.htmlFor = 'description-' + obj.id;
+    descLabel.textContent = 'Description:';
+    const descInput = document.createElement('textarea');
+    descInput.setAttribute('id', 'description-' + obj.id);
+    descInput.classList.add('detail-inputs-' + obj.id); 
+    descInput.setAttribute('type', 'text');
+    descInput.setAttribute('readonly', 'readonly'); 
+    descInput.textContent = `${obj.description}`; 
+    descInput.setAttribute('value', `${obj.description}`);
+    infoDiv.append(
+        infoContainer1,
         descLabel,
         descInput,
-    )
-
-
-    // append elements
-    taskContainer.append(
-        taskDiv,
-        infoDiv
     )
     // container 1 
     const container1 = document.createElement('div');
@@ -138,6 +138,8 @@ export function createTaskDom(obj) {
     const checkbox = document.createElement('input');
     checkbox.classList.add('checkbox');
     checkbox.setAttribute('type', 'checkbox');
+    const projectSpan = document.createElement('span');
+    projectSpan.textContent = `${obj.title}`;
     if(obj.status === 'complete') {
         checkbox.checked = true;
         taskLi.classList.add('active');
@@ -150,11 +152,9 @@ export function createTaskDom(obj) {
             Status.toggleStatus(obj.id, 'incomplete');
         }
     });
-    const span1 = document.createElement('span');
-    span1.textContent = obj.title;
     container1.append(
-        checkbox,
-        span1
+        projectSpan,
+        checkbox
     );
     // container 2 
     const container2 = document.createElement('div');
@@ -175,6 +175,10 @@ export function createTaskDom(obj) {
     colorPriority(obj.priority, priorityDiv);
     taskList.appendChild(taskLi);
     taskLi.appendChild(taskContainer);
+    taskContainer.append(
+        taskDiv,
+        infoDiv
+    )
     taskDiv.append(
         container1,
         container2
