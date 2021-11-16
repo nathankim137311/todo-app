@@ -3,6 +3,8 @@
  // Task //
 //////////
 
+import Status from "./status.js";
+
 export default class Task {
     constructor(title, description, project, priority, date) {
         this.id = JSON.parse(localStorage.getItem('id')) + 1; // added unique identifier; 
@@ -59,6 +61,11 @@ export function createTaskDom(obj) {
     }
     checkbox.addEventListener('change', (e) => {
         taskDiv.classList.toggle('active');
+        if(checkbox.checked) {
+            Status.toggleStatus(obj.id, 'complete');
+        } else {
+            Status.toggleStatus(obj.id, 'incomplete');
+        }
     });
     const span1 = document.createElement('span');
     span1.textContent = obj.title;
