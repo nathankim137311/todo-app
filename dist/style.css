@@ -301,6 +301,8 @@ nav ul li #add-task-link {
   height: 100%;
   width: 100%;
   position: relative;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 .todo-item .container-1 {
@@ -354,5 +356,10 @@ nav ul li #add-task-link {
   font-size: 1.5rem;
   color: #FF0000;
   text-decoration: none;
+}
+
+#task-container .todo-item.active {
+  text-decoration: line-through;
+  opacity: 0.35;
 }
 /*# sourceMappingURL=style.css.map */

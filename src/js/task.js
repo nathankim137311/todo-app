@@ -22,7 +22,7 @@ export default class Task {
         document.getElementById('task-list').innerHTML = ''; 
     }
     static createNewTaskList(list) {
-        for(let i = 0; list.length; i++) {
+        for(let i = 0; i < list.length; i++) {
             createTaskDom(list[i]);
         }
     }
@@ -55,7 +55,11 @@ export function createTaskDom(obj) {
     checkbox.setAttribute('type', 'checkbox');
     if(obj.status === 'complete') {
         checkbox.checked = true;
+        taskDiv.classList.add('active');
     }
+    checkbox.addEventListener('change', (e) => {
+        taskDiv.classList.toggle('active');
+    });
     const span1 = document.createElement('span');
     span1.textContent = obj.title;
     container1.append(

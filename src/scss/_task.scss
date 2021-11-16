@@ -35,6 +35,7 @@
     height: 100%;
     width: 100%;
     position: relative;
+    transition: all 0.15s ease;
     .container-1 {
         display: inherit;
         align-items: center;
@@ -73,4 +74,9 @@
             text-decoration: none;
         }
     }
+}
+
+#task-container .todo-item.active {
+    text-decoration: line-through;
+    opacity: 0.35;
 }
