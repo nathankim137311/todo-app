@@ -271,9 +271,13 @@ nav ul li #add-task-link {
 
 #task-container ul li {
   background-color: transparent;
-  height: 50px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   border-radius: 2px;
   border-bottom: 1px #202225 solid;
+  -webkit-transition: all 0.15s ease;
+  transition: all 0.15s ease;
 }
 
 #task-container h2 {
@@ -281,7 +285,7 @@ nav ul li #add-task-link {
   width: 100%;
   text-align: left;
   color: white;
-  padding: 0px 10px 0px 10px;
+  padding: 0px;
 }
 
 .todo-item {
@@ -300,9 +304,9 @@ nav ul li #add-task-link {
           align-items: center;
   height: 100%;
   width: 100%;
+  padding: 10px;
   position: relative;
-  -webkit-transition: all 0.15s ease;
-  transition: all 0.15s ease;
+  cursor: pointer;
 }
 
 .todo-item .container-1 {
@@ -358,8 +362,21 @@ nav ul li #add-task-link {
   text-decoration: none;
 }
 
-#task-container .todo-item.active {
+.todo-item-container.active {
   text-decoration: line-through;
   opacity: 0.35;
+}
+
+.task-info-div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #202225;
+  color: white;
+  padding: 10px;
 }
 /*# sourceMappingURL=style.css.map */

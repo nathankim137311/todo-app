@@ -12,10 +12,11 @@
         padding: 0px;
         li {
             background-color: transparent;
-            height: 50px;
+            height: fit-content;
             //padding: 10px 20px 10px 20px;
             border-radius: 2px;
             border-bottom: 1px $darkgrey solid;
+            transition: all 0.15s ease;
         }
     }
     h2 {
@@ -23,7 +24,7 @@
         width: 100%;
         text-align: left;
         color: white;
-        padding: 0px 10px 0px 10px;
+        padding: 0px;
     }
 }
 
@@ -34,8 +35,9 @@
     align-items: center;
     height: 100%;
     width: 100%;
+    padding: 10px;
     position: relative;
-    transition: all 0.15s ease;
+    cursor: pointer;
     .container-1 {
         display: inherit;
         align-items: center;
@@ -76,7 +78,15 @@
     }
 }
 
-#task-container .todo-item.active {
+.todo-item-container.active {
     text-decoration: line-through;
     opacity: 0.35;
+}
+
+.task-info-div {
+    display: flex;
+    flex-direction: column;
+    background-color: $darkgrey;
+    color: white;
+    padding: 10px;
 }

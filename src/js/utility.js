@@ -26,5 +26,13 @@ export default class Utility {
         const newArr = taskArr.filter(task => task.project === name);
         return newArr;
     }
+    static defaultValue(select, objValue) {
+        for(let i, j = 0; i = select.options[j]; j++) {
+            if(i.value == objValue) {
+                select.selectedIndex = j; 
+                break;
+            }
+        }
+    }
 }
     
