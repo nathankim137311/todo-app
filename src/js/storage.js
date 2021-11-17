@@ -5,9 +5,11 @@
 
 import { createTaskDom } from "./task.js";
 import Project from "./project.js";
+import Counter from "./counter.js";
 
 export let taskArr = [];
 export let projectArr = [];
+export let counterArr = [];
 
 export default class Storage {
     static saveTask(task) {
@@ -26,6 +28,7 @@ export class Load extends Storage {
     static itemsFromStorage() {
         this.tasks();
         this.projects();
+        this.counters();
     }
     static tasks() {
         if(localStorage.getItem('tasks') === null) {
@@ -41,6 +44,14 @@ export class Load extends Storage {
         } else {
             projectArr = JSON.parse(localStorage.getItem('projects'));
             this.loadProjects(projectArr);
+        }
+    }
+    static counters() {
+        if(localStorage.getItem('tasks') === null) {
+            taskArr = []; 
+        } else {
+            const taskArray = JSON.parse(localStorage.getItem('tasks'));
+            Counter.createCounters(taskArray);
         }
     }
     static loadTasks(taskArr) {

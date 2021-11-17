@@ -81,7 +81,10 @@ nav {
 }
 
 #side-nav-links #project-list {
-    display: none;
+    display: block;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
     margin-left: 20px;
     li {
         color: black;
@@ -92,5 +95,7 @@ nav {
 }
 
 #side-nav-links #project-list.active {
-    display: block;
+    position: static;
+    opacity: 1;
+    pointer-events: all;
 }

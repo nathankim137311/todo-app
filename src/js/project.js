@@ -13,6 +13,7 @@ export default class Project {
         for(let i = 0; i < projectArr.length; i++) {
             const projectLi = document.createElement('li');
             const projectA = document.createElement('a');
+            projectA.setAttribute('id', `project-${projectArr[i]}`);
             projectA.setAttribute('href', '#');
             projectA.textContent = `${projectArr[i]}`;
             const projectHeading = document.getElementById('project-heading');

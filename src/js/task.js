@@ -39,8 +39,8 @@ export function createTask() {
     const priority = document.getElementById('priority-input').value;
     const date = document.getElementById('date-input').value;
     // const task = new Task(title, description, project, priority, date);
-    const task = new Task('Homework', 'complete homework before 9pm', 'School', 'high', '2021-11-13'); // dummy values
-    // const task = new Task('Workout', 'workout before poop', 'Gym', 'high', '2012-11-21'); // dummy values 
+    //const task = new Task('Homework', 'complete homework before 9pm', 'School', 'high', '2021-11-13'); // dummy values
+    const task = new Task('Workout', 'workout before poop', 'Gym', 'high', '2012-11-21'); // dummy values 
     createTaskDom(task);
     return task;
 }

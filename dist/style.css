@@ -136,7 +136,10 @@ nav ul li #add-task-link {
 }
 
 #side-nav-links #project-list {
-  display: none;
+  display: block;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
   margin-left: 20px;
 }
 
@@ -149,7 +152,9 @@ nav ul li #add-task-link {
 }
 
 #side-nav-links #project-list.active {
-  display: block;
+  position: static;
+  opacity: 1;
+  pointer-events: all;
 }
 
 #form-container {
@@ -263,7 +268,7 @@ nav ul li #add-task-link {
   left: 280px;
   top: 100px;
   padding: 30px;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 #task-container ul {
