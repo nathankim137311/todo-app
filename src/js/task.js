@@ -39,8 +39,8 @@ export function createTask() {
     const priority = document.getElementById('priority-input').value;
     const date = document.getElementById('date-input').value;
     // const task = new Task(title, description, project, priority, date);
-    // const task = new Task('Homework', 'complete homework before 9pm', 'School', 'high', '11/13/21'); // dummy values
-    const task = new Task('Workout', 'workout before poop', 'Gym', 'high', '11/21/2012'); // dummy values 
+    const task = new Task('Homework', 'complete homework before 9pm', 'School', 'high', '2021-11-13'); // dummy values
+    // const task = new Task('Workout', 'workout before poop', 'Gym', 'high', '2012-11-21'); // dummy values 
     createTaskDom(task);
     return task;
 }
@@ -57,7 +57,7 @@ export function createTaskDom(obj) {
     const infoDiv = document.createElement('div');
     infoDiv.classList.add('task-info-div');
     // toggle display of info div
-    taskDiv.addEventListener('click', () => { // edit later 
+    taskDiv.addEventListener('click', () => {
         infoDiv.classList.toggle('show');
     });
     // two containers
@@ -85,7 +85,7 @@ export function createTaskDom(obj) {
     dateInput.setAttribute('id', 'date-' + obj.id);
     dateInput.classList.add('detail-inputs-' + obj.id);
     dateInput.setAttribute('type', 'date'); 
-    dateInput.setAttribute('value', obj.date);
+    dateInput.setAttribute('value', `${obj.date}`);
     dateInput.setAttribute('readonly', 'readonly');
     // priority 
     const selectLabel = document.createElement('label');
@@ -113,8 +113,6 @@ export function createTaskDom(obj) {
     editBtn.setAttribute('id', 'edit-btn');
     editBtn.innerHTML = '<span class="material-icons-outlined">edit</span>'; 
     editBtn.addEventListener('click', () => {
-        console.log('edit button!')
-        // toggles edit/save 
         Edit.toggleEdit(editBtn, obj.id); 
     });
     infoContainer1.append(
@@ -175,6 +173,7 @@ export function createTaskDom(obj) {
     const deleteIcon = document.createElement('span');
     deleteIcon.innerHTML = '<span class="material-icons-outlined"><a id="delete-icon" title="delete task" href="#">delete</a></span>';
     deleteIcon.addEventListener('click', (e) => {
+        e.stopPropagation();
         const id = e.target.parentNode.parentNode.parentNode.parentNode.id;
         e.target.parentNode.parentNode.parentNode.parentNode.parentNode.remove();
         deleteTodo(id);
