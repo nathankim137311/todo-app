@@ -135,6 +135,20 @@ nav ul li #add-task-link {
   background-color: #2F3136;
 }
 
+#all-tasks-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 15px;
+}
+
+#all-tasks {
+  margin-right: 8px;
+}
+
 #side-nav-links #project-list {
   display: block;
   position: absolute;

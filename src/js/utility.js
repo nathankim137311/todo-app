@@ -34,5 +34,18 @@ export default class Utility {
             }
         }
     }
+    static findSumOfArray(arr) {
+        let total = 0;
+        for (let i in arr) {
+            total += arr[i];
+        }
+        return total;
+    }
+    static getOccAndNames(arr) {
+        const occurrencesArr = arr.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
+        const occurrences = [...occurrencesArr.values()];
+        const projectNames = [...occurrencesArr.keys()];
+        return [occurrences, projectNames];
+    }
 }
     

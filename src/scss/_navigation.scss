@@ -80,6 +80,16 @@ nav {
     }
 }
 
+#all-tasks-container {
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+}
+
+#all-tasks {
+    margin-right: 8px;
+}
+
 #side-nav-links #project-list {
     display: block;
     position: absolute;
