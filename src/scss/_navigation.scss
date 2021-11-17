@@ -70,7 +70,7 @@ nav {
                 text-decoration: none;
                 color: white;
                 font-size: 1.25rem;
-                width: 100%;
+                width: 80%;
                 padding: 0px 20px 0px 20px;
             }
             a:hover {
@@ -98,4 +98,22 @@ nav {
     position: static;
     opacity: 1;
     pointer-events: all;
+}
+
+#project-list li div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.project-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    height: 20px;
+    width: 20px;
+    background-color: $blurple;
+    color: white;
+    border-radius: 50%;
 }

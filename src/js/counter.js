@@ -9,21 +9,18 @@ export default class Counter {
         const occurrencesArr = newArr.reduce((acc, e) => acc.set(e, (acc.get(e) || 0) + 1), new Map());
         const occurrences = [...occurrencesArr.values()];
         const projectNames = [...occurrencesArr.keys()];
-        for (let i = 0; i < projectNames.length; i++) {
-            const projectLink = document.getElementById('id', `project-${projectNames[i]}`);
-            // console.log(projectNames[i]);
-            console.log(projectLink);
-            // projectLink.textContent += `-${occurrences[i]}`;
-        }
-        // const count = {};
-        // newArr.forEach((task) => {
-        //     count[task] = count[task] + 1 || 1
-        // });
-        // console.log(count)
-        // return count
+        this.addCountersToDom(projectNames, occurrences);
     }
-    static addCountersToDom() {
-        // counter to dom
+    static addCountersToDom(names, occurrences) {
+        for (let i = 0; i < names.length; i++) {
+            const projectLink = document.getElementById(`${names[i]}`);
+            const numDiv = document.createElement('div');
+            numDiv.classList.add('project-counter');
+            const numP = document.createElement('p');
+            numDiv.appendChild(numP);
+            projectLink.appendChild(numDiv);
+            numP.textContent = `${occurrences[i]}`;
+        }
     }
     /*
     static updateCounters() {

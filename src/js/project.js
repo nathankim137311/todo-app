@@ -12,10 +12,12 @@ export default class Project {
         Utility.removeAllChildNodes(projectList);
         for(let i = 0; i < projectArr.length; i++) {
             const projectLi = document.createElement('li');
+            const projectDiv = document.createElement('div');
+            projectDiv.setAttribute('id', `${projectArr[i]}`);
             const projectA = document.createElement('a');
-            projectA.setAttribute('id', `project-${projectArr[i]}`);
             projectA.setAttribute('href', '#');
             projectA.textContent = `${projectArr[i]}`;
+            projectDiv.appendChild(projectA);
             const projectHeading = document.getElementById('project-heading');
 
             projectA.addEventListener('click', () => {
@@ -38,7 +40,7 @@ export default class Project {
             });
 
             projectList.appendChild(projectLi);
-            projectLi.appendChild(projectA);
+            projectLi.appendChild(projectDiv);
         }
     }
 }
