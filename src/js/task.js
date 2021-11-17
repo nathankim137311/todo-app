@@ -52,12 +52,13 @@ export function createTaskDom(obj) {
     const taskDiv = document.createElement('div');
     taskDiv.classList.add('todo-item');
     taskDiv.setAttribute('id', `${obj.id}`);
-    taskDiv.addEventListener('click', () => { // edit later 
-        console.log('oh shit what up');
-    });
     // task details // 
     const infoDiv = document.createElement('div');
     infoDiv.classList.add('task-info-div');
+    // toggle display of info div
+    taskDiv.addEventListener('click', () => { // edit later 
+        infoDiv.classList.toggle('show');
+    });
     // two containers
     const infoContainer1 = document.createElement('div');
     infoContainer1.classList.add('info-container-1')
@@ -151,8 +152,9 @@ export function createTaskDom(obj) {
         checkbox.checked = true;
         taskLi.classList.add('active');
     }
-    checkbox.addEventListener('change', (e) => {
+    checkbox.addEventListener('change', () => {
         taskLi.classList.toggle('active');
+        infoDiv.classList.remove('show');
         if(checkbox.checked) {
             Status.toggleStatus(obj.id, 'complete');
         } else {
