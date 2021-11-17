@@ -106,6 +106,12 @@ export function createTaskDom(obj) {
     prioritySelect.append(priorityLow, priorityMedium, priorityHigh);
     // default value for select element
     Utility.defaultValue(prioritySelect, obj.priority);
+    const editBtn = document.createElement('button');
+        editBtn.innerHTML = '<span class="material-icons-outlined">edit</span>'; 
+        editBtn.addEventListener('click', () => {
+        // toggles edit/save 
+        //Edit.toggleEdit(editBtn, obj.id); 
+        });
     // append 
     infoContainer1.append(
         infoSpan,
@@ -131,6 +137,7 @@ export function createTaskDom(obj) {
         infoContainer1,
         descLabel,
         descInput,
+        editBtn
     )
     // container 1 
     const container1 = document.createElement('div');
