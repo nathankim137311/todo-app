@@ -5,6 +5,7 @@
 
 import Status from "./status.js";
 import Utility from "./utility.js";
+import Edit from "./edit.js";
 
 export default class Task {
     constructor(title, description, project, priority, date) {
@@ -75,6 +76,7 @@ export function createTaskDom(obj) {
     titleInput.setAttribute('readonly', 'readonly'); 
     titleInput.textContent = `${obj.title}`;
     titleInput.setAttribute('value', `${obj.title}`);
+    titleInput.classList.add('detail-inputs-' + obj.id);
     // due date 
     const dateLabel = document.createElement('label');
     dateLabel.htmlFor = 'date-' + obj.id;
@@ -108,12 +110,13 @@ export function createTaskDom(obj) {
     // default value for select element
     Utility.defaultValue(prioritySelect, obj.priority);
     const editBtn = document.createElement('button');
-        editBtn.innerHTML = '<span class="material-icons-outlined">edit</span>'; 
-        editBtn.addEventListener('click', () => {
+    editBtn.setAttribute('id', 'edit-btn');
+    editBtn.innerHTML = '<span class="material-icons-outlined">edit</span>'; 
+    editBtn.addEventListener('click', () => {
+        console.log('edit button!')
         // toggles edit/save 
-        //Edit.toggleEdit(editBtn, obj.id); 
-        });
-    // append 
+        Edit.toggleEdit(editBtn, obj.id); 
+    });
     infoContainer1.append(
         infoSpan,
         titleLabel,

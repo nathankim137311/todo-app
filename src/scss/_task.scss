@@ -100,23 +100,29 @@
 .task-info-div.show {
     position: static;
     opacity: 1;
-    pointer-events: 'all';
-    // flex-direction: column;
+    pointer-events: all;
 }
 
-.task-info-div > button {
+#edit-btn {
     color: $blurple;
     background-color: $darkgrey;
     border: 1px black solid;
     border-radius: 5px;
+    height: 35px;
+}
+
+#edit-btn:hover {
+    border: 1px white solid;
+    cursor: pointer;
 }
 
 .task-info-div > textarea {
     margin-top: 10px;
+    margin-bottom: 10px;
     background-color: transparent;
     color: white;
     border: none;
-    padding: 0px;
+    padding: 10px;
     font-size: 1rem;
 }
 
