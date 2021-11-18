@@ -55,10 +55,11 @@ export default class Utility {
                 todayTasks.push(taskArr[i]);
             }
         }
-        // console.log(taskArr);
-        return todayTasks;
-        //const todayTasks = taskArr.find(task => task.date === currentDate);
-        //return todayTasks;
+        if(todayTasks.length === 0) {
+            return false
+        } else {
+            return todayTasks;
+        }
     }
     static getCurrentDate() {
         let currentDate = new Date();

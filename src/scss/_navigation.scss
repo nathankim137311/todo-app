@@ -90,6 +90,17 @@ nav {
     margin-right: 8px;
 }
 
+#today-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 15px;
+}
+
+#today {
+    margin-right: 11px;
+}
+
 #side-nav-links #project-list {
     display: block;
     position: absolute;
@@ -125,5 +136,13 @@ nav {
     width: 20px;
     background-color: $blurple;
     color: white;
+    border-radius: 50%;
+}
+
+.today-indicator {
+    margin-right: 0px;
+    height: 15px;
+    width: 15px;
+    background-color: red;
     border-radius: 50%;
 }

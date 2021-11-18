@@ -149,6 +149,24 @@ nav ul li #add-task-link {
   margin-right: 8px;
 }
 
+#today-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-left: 15px;
+}
+
+#today {
+  margin-right: 11px;
+}
+
 #side-nav-links #project-list {
   display: block;
   position: absolute;
@@ -198,6 +216,14 @@ nav ul li #add-task-link {
   width: 20px;
   background-color: #5865F2;
   color: white;
+  border-radius: 50%;
+}
+
+.today-indicator {
+  margin-right: 0px;
+  height: 15px;
+  width: 15px;
+  background-color: red;
   border-radius: 50%;
 }
 

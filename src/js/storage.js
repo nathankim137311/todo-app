@@ -6,6 +6,9 @@
 import { createTaskDom } from "./task.js";
 import Project from "./project.js";
 import Counter from "./counter.js";
+import Indicator from "./indicator.js";
+import Date from "./date.js";
+import Utility from "./utility.js";
 
 export let taskArr = [];
 export let projectArr = [];
@@ -29,6 +32,7 @@ export class Load extends Storage {
         this.tasks();
         this.projects();
         this.counters();
+        this.indicator();
     }
     static tasks() {
         if(localStorage.getItem('tasks') === null) {
@@ -51,6 +55,15 @@ export class Load extends Storage {
             taskArr = []; 
         } else {
             Counter.createCounters();
+        }
+    }
+    static indicator() {
+        if(localStorage.getItem('tasks') === null) {
+            taskArr = []; 
+        } else {
+            if(Utility.sortByToday !== false) {
+                Indicator.redIndicator();
+            }
         }
     }
     static loadTasks(taskArr) {

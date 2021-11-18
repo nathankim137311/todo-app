@@ -3,8 +3,10 @@
  // Project //
 /////////////
 
-import Task, { createTaskDom } from "./task";
-import Utility from "./utility";
+import Indicator from "./indicator";
+import Task, { createTaskDom } from "./task.js";
+import Utility from "./utility.js";
+import Date from "./date.js";
 
 export default class Project {
     static createProject(projectArr) {
@@ -41,12 +43,7 @@ export default class Project {
         const today = document.getElementById('today');
         today.addEventListener('click', () => {
             projectHeading.textContent = today.textContent;
-            const currentDate = Utility.getCurrentDate();
-            const todayTasks = Utility.sortByToday(currentDate);
-            Task.clearTaskList();
-            for(let i = 0; i < todayTasks.length; i++) {
-                createTaskDom(todayTasks[i]);
-            }
+            Date.today();
         });
     }
 }
