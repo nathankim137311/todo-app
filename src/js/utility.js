@@ -47,5 +47,26 @@ export default class Utility {
         const projectNames = [...occurrencesArr.keys()];
         return [occurrences, projectNames];
     }
+    static sortByToday(currentDate) {
+        const taskArr = JSON.parse(localStorage.getItem('tasks'));
+        const todayTasks = [];
+        for(let i = 0; i < taskArr.length; i++) {
+            if(taskArr[i].date === currentDate) {
+                todayTasks.push(taskArr[i]);
+            }
+        }
+        // console.log(taskArr);
+        return todayTasks;
+        //const todayTasks = taskArr.find(task => task.date === currentDate);
+        //return todayTasks;
+    }
+    static getCurrentDate() {
+        let currentDate = new Date();
+        const dd = String(currentDate.getDate()).padStart(2, '0');
+        const mm = String(currentDate.getMonth() + 1).padStart(2, '0'); //January is 0!
+        const yyyy = currentDate.getFullYear();
+        currentDate = yyyy + '-' + mm + '-' + dd;
+        return currentDate;
+    }
 }
     

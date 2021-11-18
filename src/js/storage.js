@@ -50,7 +50,6 @@ export class Load extends Storage {
         if(localStorage.getItem('tasks') === null) {
             taskArr = []; 
         } else {
-            // const taskArray = JSON.parse(localStorage.getItem('tasks'));
             Counter.createCounters();
         }
     }
