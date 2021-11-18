@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Todo List</title>
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+</head>
+<body>
+    <nav>
+    <header>
+        <h1>// My Todo List</h1>
+    </header>
+        <ul id="nav-links">
+            <li><a title="add task" id="add-task-link" href="#">Add Task</a></li>
+            <li><a title="go to this project's github repo"id="github" href="https://github.com/nathankim137311" target="_blank">Github</a></li>
+            <li><a title="settings"id="settings" href="#">Settings</a></li>
+        </ul>
+    </nav>
+    <div id="side-nav">
+        <ul id="side-nav-links">
+            <li><a title="home"href="#">Home</a></li>
+            <li id="all-tasks-container">
+                <a id="all-tasks" title="all tasks" href="#">Inbox</a>
+            </li>
+            <li>
+                <a id="project-link" title="view all projects from dropdown menu"href="#">Projects</a>
+                <ul id="project-list">
+                </ul>
+            </li>
+            <li id="today-container">
+                <a id="today"title="view all tasks due today"href="#">Today</a>
+            </li>
+            <li><a title="add project"href="#">Add Project</a></li>
+        </ul>
+    </div>
+    <div id="form-container">
+        <form id="form">
+            <h3>Add Task</h3>
+            <label for="title">Title:</label>
+            <input type="text" placeholder="Title: Homework" name="title" id="title-input">
+            <label for="description">Description:</label>
+            <textarea name="description" id="description-input" cols="30" rows="6" placeholder="do homework before 9pm..."></textarea>
+            <label for="project">Project:</label>
+            <input type="text" placeholder="enter project name" name="project" id="project-input">
+            <label for="date-input">Due date:</label>
+            <input type="date" name="date" id="date-input">
+            <label for="priority-level">Priority:</label>
+            <select name="priority-level" id="priority-input">
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+            </select>
+            <div id="button-container">
+                <button id="add-task-btn">Add</button>
+            </div>
+        </form>
+    </div>
+    <div id="task-container">
+        <h2 id="project-heading">Tasks</h2>
+        <ul id="task-list">
+        </ul>
+    <div>
+    <footer>
+        <a href="https://github.com/nathankim137311" target="_blank">
+            <img src="../src/png/github.png" height="35px" width="35px">
+        </a>
+    </footer>
+    <script src="main.js"></script>
+</body>
+</html>
