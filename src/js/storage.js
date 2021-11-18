@@ -61,7 +61,7 @@ export class Load extends Storage {
         if(localStorage.getItem('tasks') === null) {
             taskArr = []; 
         } else {
-            if(Utility.sortByToday !== false) {
+            if(Utility.sortByToday(Utility.getCurrentDate()) !== false) {
                 Indicator.redIndicator();
             }
         }
