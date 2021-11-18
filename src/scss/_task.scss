@@ -3,9 +3,9 @@
 #task-container {
     position: absolute;
     height: 85%;
+    right: 15%;
+    top: 10%;
     width: 1225px;
-    left: 280px;
-    top: 100px;
     padding: 30px;
     overflow-y: auto;
     ul {
@@ -21,7 +21,7 @@
     }
     h2 {
         margin: 0px;
-        width: 100%;
+        width: fit-content;
         text-align: left;
         color: white;
         padding: 0px;

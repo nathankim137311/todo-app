@@ -246,10 +246,12 @@ nav ul li #add-task-link {
   background-color: #202225;
   -webkit-transition: .25s;
   transition: .25s;
+  z-index: 2000;
 }
 
 #form-container.active {
   right: 0px;
+  z-index: 2000;
 }
 
 #form {
@@ -334,9 +336,9 @@ nav ul li #add-task-link {
 #task-container {
   position: absolute;
   height: 85%;
+  right: 15%;
+  top: 10%;
   width: 1225px;
-  left: 280px;
-  top: 100px;
   padding: 30px;
   overflow-y: auto;
 }
@@ -359,7 +361,9 @@ nav ul li #add-task-link {
 
 #task-container h2 {
   margin: 0px;
-  width: 100%;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
   text-align: left;
   color: white;
   padding: 0px;
