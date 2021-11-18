@@ -212,7 +212,7 @@ function deleteTodo(id) {
 function colorPriority(priority, div) {
     switch(priority.toLowerCase()) {
         case 'high':
-            div.style.backgroundColor = '#FF0000'; // #AB1D3D
+            div.style.backgroundColor = '#FF0000';
             break;
         case 'medium':
             div.style.backgroundColor = '#FECD19';

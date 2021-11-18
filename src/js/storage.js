@@ -7,7 +7,6 @@ import { createTaskDom } from "./task.js";
 import Project from "./project.js";
 import Counter from "./counter.js";
 import Indicator from "./indicator.js";
-import Date from "./date.js";
 import Utility from "./utility.js";
 
 export let taskArr = [];
