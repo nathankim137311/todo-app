@@ -28,6 +28,36 @@
     }
 }
 
+#project-heading-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#icon-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 30px;
+    a:not(:last-child) {
+        display: block;
+        height: 28px;
+        width: 28px;
+        margin-right: 30px;
+    }
+    a:last-child {
+        display: block;
+        height: 28px;
+        width: 28px;
+    }
+    .material-icons-outlined {
+        color: white;
+        font-size: 28px;
+    }
+}
+
 .todo-item {
     display: flex;
     flex-direction: row;
