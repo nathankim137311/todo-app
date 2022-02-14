@@ -4,6 +4,8 @@
 An amped up Todo List dashboard (akin to the popular app Todoist). Users can perform basic CRUD operations, and organize their task items by project. 
 
 ## Demo
+### Creating and Deleting Tasks
+![todo_demo](https://user-images.githubusercontent.com/46698958/153836496-d04c97ea-a680-43f1-a22e-1691bbbe5a00.gif)
 
 ## Features
 * Basic CRUD functionality
